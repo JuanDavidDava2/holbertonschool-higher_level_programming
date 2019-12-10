@@ -10,4 +10,4 @@ if last > 5:
 elif last == 0:
     print("0")
 else:
-    print("less that 6 and not 0")
+    print("less than 6 and not 0")
