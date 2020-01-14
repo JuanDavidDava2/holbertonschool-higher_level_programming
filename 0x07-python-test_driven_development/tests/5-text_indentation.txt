@@ -1,12 +1,26 @@
-
+	
 >>> text_indentation = __import__("5-text_indentation").text_indentation
 
 >>> text="Hello. I am a string? Here is what you should do: parse me."
 
 Correct Usage:
 
->>> text_indentation("Howdy, Yall!")
-Howdy, Yall!
+>>> text_indentation("Holberton School!")
+Holberton School!
+
+>>> text_indentation("Holberton.School!")
+Holberton.
+<BLANKLINE>
+School!
+
+>>> text_indentation("Holberton. School? How are you: John")
+Holberton.
+<BLANKLINE>
+ School?
+<BLANKLINE>
+ How are you:
+<BLANKLINE>
+ John
 
 >>> text="Hello. : \nI am a string? .\n"
 
