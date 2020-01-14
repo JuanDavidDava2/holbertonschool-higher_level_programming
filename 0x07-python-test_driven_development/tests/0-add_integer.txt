@@ -20,6 +20,9 @@ check examples using 0-add_integer.
 >>> add_integer(2)
 100
 
+>>> add_integer(-6)
+92
+
 >>> add_integer()
 Traceback (most recent call last):
 TypeError: add_integer() missing 1 required positional argument: 'a'
@@ -27,10 +30,9 @@ TypeError: add_integer() missing 1 required positional argument: 'a'
 >>> add_integer(1.33333333333333333333333333333333333333, 2)
 3
 
->>> add_integer(1, float("str"))
+>>> add_integer(1, float("sts"))
 Traceback (most recent call last):
-	  ...
-OverflowError: cannot convert float infinity to integer
+ValueError: could not convert string to float: 'sts'
 
 >>> add_integer(float("nan"))
 Traceback (most recent call last):
