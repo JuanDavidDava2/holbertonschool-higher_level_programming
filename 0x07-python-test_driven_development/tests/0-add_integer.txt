@@ -27,6 +27,11 @@ TypeError: add_integer() missing 1 required positional argument: 'a'
 >>> add_integer(1.33333333333333333333333333333333333333, 2)
 3
 
+>>> add_integer(1, float("str"))
+Traceback (most recent call last):
+	  ...
+OverflowError: cannot convert float infinity to integer
+
 >>> add_integer(float("nan"))
 Traceback (most recent call last):
 	  ...
