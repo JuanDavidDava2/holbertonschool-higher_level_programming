@@ -13,8 +13,19 @@ check examples using 0-add_integer.
 >>> add_integer(100, -2)
 98
 
->>> add_integer(100.0, -2)
+
+>>> add_integer(100.5, -2)
 98
+
+>>> add_integer(2)
+100
+
+>>> add_integer()
+Traceback (most recent call last):
+TypeError: add_integer() missing 1 required positional argument: 'a'
+
+>>> add_integer(1.33333333333333333333333333333333333333, 2)
+3
 
 >>> add_integer("s", 1)
 Traceback (most recent call last):
