@@ -5,7 +5,7 @@ Defines class rectangle
 
 
 class Rectangle:
-    
+
     number_of_instances = 0
     print_symbol = "#"
 
