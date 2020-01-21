@@ -1,0 +1,46 @@
+The ``7-base_geometry`` module
+======================
+
+This is a text file in reStructuredText format to test the above module.
+
+Using ``BaseGeometry``
+-------------------
+
+First import ``BaseGeometry`` from the ``7-base_geometry`` module:
+
+    >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+Now use it:
+
+    >>> bg = BaseGeometry()
+    >>> type(bg)
+    <class '7-base_geometry.BaseGeometry'>
+
+
+This class should define 2 functions
+
+``area``
+    >>> 'area' in dir(BaseGeometry)
+    True
+
+``integer_validator``
+    >>> 'integer_validator' in dir(BaseGeometry)
+    True
+
+Should test publicity of methods
+    >>> BaseGeometry.area
+    <function BaseGeometry.area at 0x...>
+
+    >>> bg.integer_validator	#doctest: +ELLIPSIS
+    <bound method BaseGeometry.integer_validator of <7-base_geometry.BaseGeometry object at 0x...>>
+
+And no instance attributes or methods
+    >>> dir(bg) == dir(BaseGeometry)
+    True
+
+Test ``area``
+-------------
+It is not implemented
+    >>> bg.area()
+    Traceback (most recent call last):
+    Exception: area() is not implemented
