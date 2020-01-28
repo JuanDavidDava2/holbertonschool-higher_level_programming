@@ -22,8 +22,8 @@ class Testpep8(unittest.TestCase):
         fileSquare = "models/square.py"
         fileSquareTest = "tests/test_models/test_square.py"
         check = style.check_files([fileRectangle, fileRectangleTest,
-        fileBase, fileBaseTest, fileSquare,
-        fileSquareTest])
+                                  fileBase, fileBaseTest, fileSquare,
+                                  fileSquareTest])
         self.assertEqual(check.total_errors, 0, msg)
 
 
