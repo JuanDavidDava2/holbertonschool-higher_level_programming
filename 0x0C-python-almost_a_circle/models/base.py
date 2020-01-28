@@ -38,7 +38,7 @@ class Base:
     @staticmethod
     def from_json_string(json_string):
         """returns the list of the JSON string representation"""
-        if json_string is None
+        if json_string is None:
             return []
         return json.loads(json_string)
 
@@ -56,7 +56,7 @@ class Base:
     def load_from_file(cls):
         """returns a list of instances"""
         file = cls.__name__ + ".json"
-        if not os.path.isfile(file)
+        if not os.path.isfile(file):
             return []
         with open(file, "r") as filname:
             return [cls.create(**d) for d in cls.from_json_string(
