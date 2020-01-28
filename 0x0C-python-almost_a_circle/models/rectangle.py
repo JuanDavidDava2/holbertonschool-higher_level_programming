@@ -7,10 +7,10 @@ class Rectangle(Base):
     """Rectangle"""
 
     def __init__(self, width, height, x=0, y=0, id=None):
-        self.__width = width
-        self.__height = height
-        self.__x = x
-        self.__y = y
+        self.width = width
+        self.height = height
+        self.x = x
+        self.y = y
         super().__init__(id)
 
     @property
@@ -70,9 +70,11 @@ class Rectangle(Base):
         self.__y = value
 
     def area(self):
+        """return area"""
         return self.__width * self.__height
 
     def display(self):
+        """print rectangle"""
         for y in range(self.__y):
             print("")
         for h in range(self.__height):
@@ -83,7 +85,40 @@ class Rectangle(Base):
             print("")
 
     def __str__(self):
+        """show str"""
         return "[Rectangle] ({:d}) {:d}/{:d} - {:d}/{:d}"\
-		.format(self.id,self.__x,self.__y,self.__width,self.__height)
-    def update(self, *args):
+            .format(self.id, self.__x, self.__y, self.__width, self.__height)
 
+    def update(self, *args, **kwargs):
+        """ubdate"""
+        for i, j in enumerate(args):
+            if i == 0:
+                self.id = j
+            elif i == 1:
+                self.width = j
+            elif i == 2:
+                self.height = j
+            elif i == 3:
+                self.x = j
+            elif i == 4:
+                self.y = j
+        if "id" in kwargs:
+            self.id = kwargs["id"]
+        elif "width" in kwargs:
+            self.width = kwargs["width"]
+        elif "height" in kwargs:
+            self.height = kwargs["height"]
+        elif "x" in kwargs:
+            self.x = kwargs["x"]
+        elif "y" in kwargs:
+            self.y = kwargs["y"]
+
+    def to_dictionary(self):
+        """dictionary"""
+        to_dic = {}
+        to_dic["id"] = self.id
+        to_dic["width"] = self.width
+        to_dic["height"] = self.height
+        to_dic["x"] = self.x
+        to_dic["y"] = self.y
+        return to_dic
